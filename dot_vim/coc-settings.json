@@ -1,0 +1,28 @@
+{
+  "suggest.noselect": true,
+  "list.maxPreviewHeight": 20,
+  "list.height": 15,
+  "python.formatting.provider": "black",
+  "python.linting.flake8Enabled": true,
+  "python.formatting.blackPath": "/usr/local/bin/black",
+  "python.formatting.blackArgs": [
+    "--preview"
+  ],
+  "prettier.proseWrap": "always",
+  "go.goplsOptions": {},
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "args": [],
+      "rootPatterns": [
+        "go.mod",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "filetypes": [
+        "go"
+      ]
+    }
+  }
+}
