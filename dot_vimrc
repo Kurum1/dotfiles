@@ -9,7 +9,7 @@ set encoding=utf-8
 let mapleader=','
 syntax enable
 " 同步系统剪贴板
-set clipboard+=unnamed
+set clipboard=unnamed
 set tabstop=4
 set shiftwidth=4
 set softtabstop=0              " 关闭softtabstop 永远不要将空格和tab混合输入
@@ -58,10 +58,6 @@ set synmaxcol=600
 
 set scrolloff=3
 
-" paste to 'black hole register'
-nnoremap d "_d
-vnoremap d "_d
-
 " Key bindings --------------------{{{
 nnoremap <leader>sp :split<CR>
 nnoremap <leader>vs :vsplit<CR>
@@ -84,6 +80,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
+Plug 'svermeulen/vim-cutlass'                 " 剪切不同步 clipboard
 Plug 'airblade/vim-gitgutter'                 " git diff
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -100,20 +97,14 @@ Plug 'majutsushi/tagbar'                      " show tags of codes
 Plug 'spacewander/openresty-vim'
 Plug 'kien/rainbow_parentheses.vim'           " Rainbow Parentheses
 Plug 'cespare/vim-toml'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'stephpy/vim-yaml'
 Plug 'nvie/vim-flake8'
 Plug 'Vimjas/vim-python-pep8-indent'          " auto indent ()
 Plug 'slashmili/alchemist.vim'
 
-" javascript, react, jsx, etc
-Plug 'pangloss/vim-javascript'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'mattn/emmet-vim'                        " zen coding
-
-Plug 'elixir-editors/vim-elixir'              " Elixir
 Plug 'mzlogin/vim-markdown-toc'
 Plug 'gabrielelana/vim-markdown'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'benmills/vimux'
 Plug 'flazz/vim-colorschemes'
 Plug 'nathangrigg/vim-beancount'
@@ -121,7 +112,6 @@ Plug 'tyru/open-browser.vim' " preview plantuml
 Plug 'aklt/plantuml-syntax'
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'kana/vim-textobj-user'
-Plug 'laixintao/vim-textobj-ipmac'
 " On-demand lazy load
 Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'LnL7/vim-nix'

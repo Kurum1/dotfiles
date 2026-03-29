@@ -100,7 +100,10 @@ setopt SHARE_HISTORY
 if [ -f ~/.secret ]; then
     . ~/.secret
 fi
-
+# alias
+if [ -f ~/.common_alias ]; then
+    . ~/.common_alias
+fi
 # press CTRL+X+E can open vim quickly
 export EDITOR=vim
 
@@ -177,3 +180,21 @@ path=(
     $path
   )
 export PATH=":$PATH"
+
+# virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=$HOME/.local/pipx/venvs/virtualenvwrapper/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=$HOME/.local/bin/virtualenv
+source ~/.local/bin/virtualenvwrapper.sh
+
+[[ -s "/Users/liuw/.gvm/scripts/gvm" ]] && source "/Users/liuw/.gvm/scripts/gvm"
+
+export SCRCPY_SERVER_PATH=/Applications/极空间.app/Contents/Resources/app.asar.unpacked/bin/platform-tools/scrcpy-server
+export PATH=$PATH:/Applications/极空间.app/Contents/Resources/app.asar.unpacked/bin/platform-toolseval
+
+
+# Added by Antigravity
+export PATH="/Users/liuw/.antigravity/antigravity/bin:$PATH"
+# Hugging Face  
+export HF_ENDPOINT=https://hf-mirror.com
+eval "$(mise activate zsh)"
